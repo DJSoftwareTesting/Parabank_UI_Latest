@@ -14,7 +14,7 @@ namespace Parabank_UI_Latest.Utilities
 
         public static void Init()
         {
-            string basePath = Directory.GetParent(AppDomain.CurrentDomain.BaseDirectory).Parent.Parent.Parent.Parent.FullName;
+            string basePath = Directory.GetParent(AppDomain.CurrentDomain.BaseDirectory).Parent.Parent.Parent.FullName;
             reportFolder = Path.Combine(basePath, "TestReports");
             string reportPath = Path.Combine(reportFolder, "ExtentReport.html");
             var reporter = new ExtentSparkReporter(reportPath);

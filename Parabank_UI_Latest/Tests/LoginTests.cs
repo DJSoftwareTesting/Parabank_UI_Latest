@@ -16,9 +16,8 @@ namespace Parabank_UI_Latest.Tests
             loginpage.navigateToBankUrl();
             loginpage.Login(ConfigManager.Get("username"), ConfigManager.Get("password"));
             Console.WriteLine(driver.Title);
-            //Assert.AreEqual(driver.Title, "ParaBank | Error", "Title is not matching.");
-            //Assert.AreEqual(driver.Title, "ParaBank | Accounts Overvie", "Title is not matching." );
-
+            Assert.That(driver.Title, Is.EqualTo("ParaBank | Accounts Overview"), "Title is not matching.");
+            //Assert.That(driver.Title, Is.EqualTo("ParaBank | Error"), "Title is not matching.");
         }
     }
 }
