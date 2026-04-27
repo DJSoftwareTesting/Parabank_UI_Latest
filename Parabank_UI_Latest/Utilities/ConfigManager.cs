@@ -11,9 +11,6 @@ namespace Parabank_UI.Utilities
         {
             string basePath = Directory.GetParent(AppDomain.CurrentDomain.BaseDirectory).Parent.Parent.Parent.FullName;
             string path = Path.Combine(basePath, "appSettings.json");
-            //string path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "appSettings.json");
-            Console.WriteLine(basePath);
-            Console.WriteLine(path);
             config = new ConfigurationBuilder().AddJsonFile(path, optional: false, reloadOnChange: true).Build();
         }
 
