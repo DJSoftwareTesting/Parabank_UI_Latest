@@ -8,10 +8,12 @@ namespace Parabank_UI_Latest.Pages
     public class LoginPage
     {
         private IWebDriver driver;
+        private WaitHelper wait;
 
         public LoginPage(IWebDriver driver)
         {
             this.driver = driver;
+            wait = new WaitHelper(driver);
         }
 
         private IWebElement homeBtn => driver.FindElement(By.LinkText("home"));
@@ -19,11 +21,11 @@ namespace Parabank_UI_Latest.Pages
         private IWebElement contactBtn => driver.FindElement(By.LinkText("contact"));
         IReadOnlyCollection<IWebElement> leftMenuItems => driver.FindElements(By.XPath("//ul[@class='leftmenu']/li"));
         private IWebElement username => driver.FindElement(By.XPath("//input[@name='username']"));
-        private IWebElement password => driver.FindElement(By.XPath("//input[@type='password']"));
+        public IWebElement password => driver.FindElement(By.XPath("//input[@type='password']"));
         private IWebElement loginBtn => driver.FindElement(By.XPath("//input[@value='Log In']"));
         private IWebElement forgotPassword => driver.FindElement(By.LinkText("Forgot login info?"));
         private IWebElement register => driver.FindElement(By.LinkText("Register"));
-
+        private By loginError = By.ClassName("error");
 
         #region Methods
 
@@ -72,6 +74,12 @@ namespace Parabank_UI_Latest.Pages
             driver.Navigate().GoToUrl(url);
         }
 
+        public string getLoginErrorMessageText()
+        {
+            return wait.WaitForElementVisible(loginError).Text;
+        }
+
         #endregion
+
     }
 }
