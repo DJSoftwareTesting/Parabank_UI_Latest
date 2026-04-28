@@ -1,8 +1,6 @@
 ﻿using AventStack.ExtentReports;
 using AventStack.ExtentReports.Reporter;
-using System;
-using System.Collections.Generic;
-using System.Text;
+using AventStack.ExtentReports.Reporter.Config;
 
 namespace Parabank_UI_Latest.Utilities
 {
@@ -14,10 +12,11 @@ namespace Parabank_UI_Latest.Utilities
 
         public static void Init()
         {
-            string basePath = Directory.GetParent(AppDomain.CurrentDomain.BaseDirectory).Parent.Parent.Parent.Parent.FullName;
+            string basePath = Directory.GetParent(AppDomain.CurrentDomain.BaseDirectory).Parent.Parent.Parent.FullName;
             reportFolder = Path.Combine(basePath, "TestReports");
             string reportPath = Path.Combine(reportFolder, "ExtentReport.html");
             var reporter = new ExtentSparkReporter(reportPath);
+            reporter.Config.Theme = Theme.Standard;
             extent = new ExtentReports();
             extent.AttachReporter(reporter);
         }

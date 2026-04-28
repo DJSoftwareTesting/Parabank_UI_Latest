@@ -1,6 +1,5 @@
 ﻿using NUnit.Framework.Interfaces;
 using OpenQA.Selenium;
-using OpenQA.Selenium.Chrome;
 using Parabank_UI.Utilities;
 using Parabank_UI_Latest.Utilities;
 
@@ -20,7 +19,6 @@ namespace Parabank_UI_Latest.Base
         public void Setup()
         {
             string browser = ConfigManager.Get("browser");
-            Console.WriteLine(browser);
             driver = DriverFactory.CreateDriver(browser);
             driver.Manage().Timeouts().PageLoad = TimeSpan.FromSeconds(30);
             ExtentReportManager.test = ExtentReportManager.extent.CreateTest(TestContext.CurrentContext.Test.Name);
@@ -34,7 +32,6 @@ namespace Parabank_UI_Latest.Base
             if (status == TestStatus.Failed)
             {
                 string path = ScreenshotHelper.captureScreenshot(driver, TestContext.CurrentContext.Test.Name);
-                Console.Write(path);
                 if (path != null)
                 {
                     ExtentReportManager.test.Fail("Test Failed").AddScreenCaptureFromPath(path);
