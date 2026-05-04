@@ -25,6 +25,7 @@ namespace Parabank_UI_Latest.Pages
         private IWebElement loginBtn => driver.FindElement(By.XPath("//input[@value='Log In']"));
         private IWebElement forgotPassword => driver.FindElement(By.LinkText("Forgot login info?"));
         private IWebElement register => driver.FindElement(By.LinkText("Register"));
+
         private By loginError = By.ClassName("error");
 
         #region Methods
@@ -34,6 +35,7 @@ namespace Parabank_UI_Latest.Pages
             this.username.EnterText(username);
             this.password.EnterText(password);
             this.loginBtn.Click();
+            Thread.Sleep(2000);
             ExtentReportManager.test.Info("User Successfully login to Parabank.");
         }
 
