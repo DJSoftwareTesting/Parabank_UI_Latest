@@ -8,6 +8,7 @@ namespace Parabank_UI_Latest.Base
     public class BaseTest
     {
         protected static IWebDriver driver;
+        protected ApplicationMainPage ParabankUI;
 
         [OneTimeSetUp]
         public void ExtentReportSetup()
@@ -18,9 +19,10 @@ namespace Parabank_UI_Latest.Base
         [SetUp]
         public void Setup()
         {
-            string browser = ConfigManager.Get("browser");
+            string browser = ConfigManager.Browser;
             driver = DriverFactory.CreateDriver(browser);
             driver.Manage().Timeouts().PageLoad = TimeSpan.FromSeconds(30);
+            ParabankUI = new ApplicationMainPage(driver);
             ExtentReportManager.test = ExtentReportManager.extent.CreateTest(TestContext.CurrentContext.Test.Name);
             ExtentReportManager.test.Info("Test Case started...");
         }

@@ -1,4 +1,5 @@
 ﻿using OpenQA.Selenium;
+using System.Text;
 
 namespace Parabank_UI_Latest.Base
 {
@@ -49,6 +50,20 @@ namespace Parabank_UI_Latest.Base
         {
             IAlert alert = driver.SwitchTo().Alert();
             return alert.Text;
+        }
+
+        public static string RandomString(int length)
+        {
+            const string chars = "abcdefghijklmnopqrstuvwxyz";
+            var random = new Random();
+            var sb = new StringBuilder();
+
+            for (int i = 0; i < length; i++)
+            {
+                sb.Append(chars[random.Next(chars.Length)]);
+            }
+
+            return sb.ToString();
         }
     }
 }
