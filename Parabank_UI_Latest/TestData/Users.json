@@ -1,0 +1,50 @@
+[
+  {
+    "FirstName": "Auto",
+    "LastName": "Test",
+    "Address": "Lane no 1",
+    "City": "Pune",
+    "State": "NA",
+    "ZipCode": "411000",
+    "Phone": "9123456789",
+    "SSN": "1234",
+    "Username": "Test_user_202404241030",
+    "Password": "Test@123"
+  },
+  {
+    "FirstName": "Auto",
+    "LastName": "Test",
+    "Address": "Lane no 1",
+    "City": "Pune",
+    "State": "NA",
+    "ZipCode": "411000",
+    "Phone": "9174909388",
+    "SSN": "8045",
+    "Username": "Test_user_20260429143644",
+    "Password": "Test@123"
+  },
+  {
+    "FirstName": "Auto",
+    "LastName": "Test",
+    "Address": "Lane no 1",
+    "City": "Pune",
+    "State": "NA",
+    "ZipCode": "411000",
+    "Phone": "9169847511",
+    "SSN": "7439",
+    "Username": "Test_user_wzo",
+    "Password": "Test@123"
+  },
+  {
+    "FirstName": "Auto",
+    "LastName": "Test",
+    "Address": "Lane no 1",
+    "City": "Pune",
+    "State": "NA",
+    "ZipCode": "411000",
+    "Phone": "9570096491",
+    "SSN": "1385",
+    "Username": "Test_user_ejc",
+    "Password": "Test@123"
+  }
+]

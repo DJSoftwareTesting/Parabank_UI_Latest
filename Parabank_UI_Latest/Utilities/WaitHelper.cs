@@ -1,5 +1,6 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
+using Parabank_UI.Utilities;
 using SeleniumExtras.WaitHelpers;
 
 namespace Parabank_UI_Latest.Utilities
@@ -9,10 +10,10 @@ namespace Parabank_UI_Latest.Utilities
         private readonly IWebDriver driver;
         private readonly WebDriverWait wait;
 
-        public WaitHelper(IWebDriver driver, int timeoutInSeconds = 10)
+        public WaitHelper(IWebDriver driver)
         {
             this.driver = driver;
-            wait = new WebDriverWait(driver, TimeSpan.FromSeconds(timeoutInSeconds));
+            wait = new WebDriverWait(driver, TimeSpan.FromSeconds(ConfigManager.ExplicitWait));
         }
 
         public IWebElement WaitForElementVisible(By locator)
