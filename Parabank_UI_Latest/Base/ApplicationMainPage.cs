@@ -10,6 +10,7 @@ namespace Parabank_UI_Latest.Base
 
         private LoginPage loginPage;
         private DashboardPage dashboardPage;
+        private TransferFundsPage transferFundsPage;
 
 
         public ApplicationMainPage(IWebDriver driver)
@@ -33,6 +34,15 @@ namespace Parabank_UI_Latest.Base
             {
                 if (dashboardPage == null) { dashboardPage = new DashboardPage(driver); }
                 return dashboardPage;
+            }
+        }
+        
+        public TransferFundsPage TransferFunds
+        {
+            get
+            {
+                if (transferFundsPage == null) { transferFundsPage = new TransferFundsPage(driver); }
+                return transferFundsPage;
             }
         }
     }

@@ -59,6 +59,7 @@ namespace Parabank_UI_Latest.Pages
             {
                 RegisterWithNewUser();
             }
+            Thread.Sleep(2000);
             ExtentReportManager.test.Info("User Successfully login to Parabank.");
         }
 
