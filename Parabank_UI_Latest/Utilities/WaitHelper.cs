@@ -21,7 +21,6 @@ namespace Parabank_UI_Latest.Utilities
             return wait.Until(ExpectedConditions.ElementIsVisible(locator));
         }
 
-
         public IWebElement WaitForElementClickable(By locator)
         {
             return wait.Until(ExpectedConditions.ElementToBeClickable(locator));
