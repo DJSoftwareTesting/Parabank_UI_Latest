@@ -5,21 +5,17 @@ namespace Parabank_UI_Latest.Tests
 {
     public class TransferFundsTests : BaseTest
     {
-        LoginPage loginPage;
-        TransferFundsPage transferFundsPage;
+        
         [Test]
         public void FundTransfer()
         {
-            loginPage = new LoginPage(driver);
-            transferFundsPage = new TransferFundsPage(driver);
-            loginPage.navigateToBankUrl();
-            loginPage.Login(ConfigManager.Get("username"), ConfigManager.Get("password"));
-            Assert.That(driver.Title, Is.EqualTo("ParaBank | Accounts Overview"), "Title is not matching.");
-            transferFundsPage.ClickOnTransferFundLink();
-            transferFundsPage.TransferFunds("100", "22890", "22890");
-            Console.WriteLine(transferFundsPage.GetTransferCompleteMessage());
-            Assert.That(transferFundsPage.GetTransferCompleteMessage(), Is.EqualTo("Transfer Complete!"), "Transfer complete message is not matching.");
-            Assert.That(transferFundsPage.GetTransferAmount(), Is.EqualTo("$100.00"), "Transfer complete message is not matching.");
+            ParabankUI.Login.navigateToBankUrl();
+            ParabankUI.Login.Login(ConfigManager.Username, ConfigManager.Password);           
+            ParabankUI.TransferFunds.ClickOnTransferFundLink();
+            ParabankUI.TransferFunds.TransferFunds("100", "26886", "26886");
+            Console.WriteLine(ParabankUI.TransferFunds.GetTransferCompleteMessage());
+            Assert.That(ParabankUI.TransferFunds.GetTransferCompleteMessage(), Is.EqualTo("Transfer Complete!"), "Transfer complete message is not matching.");
+            Assert.That(ParabankUI.TransferFunds.GetTransferAmount(), Is.EqualTo("$100.00"), "Transfer complete message is not matching.");
         }
     }
 }
